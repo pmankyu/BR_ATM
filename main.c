@@ -69,6 +69,23 @@ int insertCard(){
 	return 0;
 }
 
+int check(){
+	int inputPin;
+	char inputAccount[20];
+
+	printf("Input your PIN\n");
+	scanf("%d", &inputPin);
+
+	if(inputPin != card[select_num].pin) return 1;
+
+	printf("Input your Account\n");
+	scanf("%s", &inputAccount);
+
+	if(!strncmp(inputAccount, card[card_num].account, strlen(card[card_num].account))) return 1;
+
+	return 0;
+}
+
 int main(int argc, char *argv[]) {
 	return 0;
 }
