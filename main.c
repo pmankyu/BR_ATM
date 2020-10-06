@@ -3,7 +3,7 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int card_num;
+int card_num, select_num;
 
 struct CardInfo {
 	char name[20];
@@ -52,6 +52,20 @@ int delCardInfo(){
 }
 
 int insertCard(){
+	printf("check your Card infomation\n");
+	showCard();
+	while(1){
+		printf("Input your Card num for insert\n");
+		scanf("%d", &select_num);
+		if(select_num>=0 && select_num <=2){
+			printf("insert Card num = %d\n", select_num);
+			break;
+		}
+		else {
+			printf("Wrong input\n");
+		}
+	}
+
 	return 0;
 }
 
