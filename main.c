@@ -81,8 +81,38 @@ int check(){
 	printf("Input your Account\n");
 	scanf("%s", &inputAccount);
 
-	if(!strncmp(inputAccount, card[card_num].account, strlen(card[card_num].account))) return 1;
+	if(!strncmp(inputAccount, card[select_num].account, strlen(card[select_num].account))) return 1;
 
+	return 0;
+}
+
+int Balance(){
+	printf("Yout Balance is %d dollars\n", card[select_num].money);
+	return 0;
+}
+
+int Deposit(){
+	int inputMoney;
+	printf("How much will you deposit\n");
+	scanf("%d", &inputMoney);
+
+	card[select_num].money += inputMoney;
+	return 0;
+}
+
+int Withdraw(){
+	int inputMoney;
+	while(1){
+		printf("How much will you withdraw\n");
+		scanf("%d", &inputMoney);
+
+		if(card[select_num].money > inputMoney){
+			break;
+		}
+		printf("It is an amount greater than the balance.\n");
+	}
+
+	card[select_num].money -= inputMoney;
 	return 0;
 }
 
