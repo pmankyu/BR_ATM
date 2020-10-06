@@ -36,6 +36,14 @@ int insertCard(){
 	return 0;
 }
 
+int showCard(){
+	int i;
+	for(i=0; i<card_num; i++){
+		printf("Card : num=%d, name=%s\n", i, card[card_num].name);
+	}
+	return 0;
+}
+
 int main(int argc, char *argv[]) {
 	return 0;
 }
