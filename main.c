@@ -12,6 +12,14 @@ struct CardInfo {
 	int money;
 }card[3];
 
+int showCard(){
+	int i;
+	for(i=0; i<card_num; i++){
+		printf("Card : num=%d, name=%s\n", i, card[card_num].name);
+	}
+	return 0;
+}
+
 int addCardInfo(){
 	if(card_num > 2){
 		printf("The storage limit has been exceeded.\n");
@@ -29,18 +37,21 @@ int addCardInfo(){
 }
 
 int delCardInfo(){
+	int i, inputNum;
+	printf("check your Card infomation\n");
+	showCard();
+	printf("Input your Card num for delete\n");
+	scanf("%d", &inputNum);
+
+	for(i=inputNum+1; i<3; i++){
+		memcpy(&card[i-1], &card[i], sizeof(struct CardInfo));
+	}
+	card_num--;
+
 	return 0;
 }
 
 int insertCard(){
-	return 0;
-}
-
-int showCard(){
-	int i;
-	for(i=0; i<card_num; i++){
-		printf("Card : num=%d, name=%s\n", i, card[card_num].name);
-	}
 	return 0;
 }
 
