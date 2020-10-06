@@ -6,8 +6,9 @@
 int card_num;
 
 struct CardInfo {
-    int pin;
+	char name[20];
     char account[10];
+	int pin;
 	int money;
 }card[3];
 
@@ -18,11 +19,11 @@ int addCardInfo(){
 	}
 
 	printf("Input your Card infomation\n");
-	printf("pin account\n");
-	printf("ex) pin = 1234, account = abc\n");
-	printf("input : 1234 abc\n");
+	printf("name pin account\n");
+	printf("ex) name = personal pin = 1234, account = abc\n");
+	printf("input : personal 1234 abc\n");
 
-	scanf("%d %s", &card[card_num].pin, &card[card_num].account);
+	scanf("%s %d %s", &card[card_num].name, &card[card_num].pin, &card[card_num].account);
 	card_num++;
 	return 0;
 }
